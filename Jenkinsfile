@@ -38,6 +38,6 @@ docker.withRegistry('https://793737242214.dkr.ecr.us-east-1.amazonaws.com',
 }
                
             }
-        }
+        
     }
 }

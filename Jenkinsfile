@@ -28,12 +28,14 @@ pipeline {
         }
         stage('Push Image') {
             steps {
+              script{
 docker.withRegistry('https://793737242214.dkr.ecr.us-east-1.amazonaws.com',
                      'ecr:us-east-1:AWS_EKS')
                    {
                      
                             myImage.push('1.0.8')
                    }
+              }
           
 }
                

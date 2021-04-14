@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build Code') {
            steps {
              
              bat 'npm install'  
@@ -12,7 +12,7 @@ pipeline {
         }
        
        
-        stage('Push image') {
+        stage('Build Image') {
          steps {
              script{
            
@@ -32,8 +32,8 @@ pipeline {
 docker.withRegistry('https://793737242214.dkr.ecr.us-east-1.amazonaws.com',
                      'ecr:us-east-1:AWS_EKS')
                    {
-                     
-                            myImage.push('1.0.8')
+                     def appImage=docker.build('react-app')
+                            appImage.push('1.0.8')
                    }
               }
           

@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import React from 'react';
+import {connect} from 'react-redux';
 import './App.css';
+import Signup from './components/users/Signup';
+import ProductsContainer from './components/products/ProductsContainer';
+import Cart from './components/cart/Cart';
+import {Link} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <br/><br/><h2>Welcome! Please {<Link to="/signup">Sign Up</Link>} or {<Link to="/signin">Sign In</Link>} to Continue.</h2>
     </div>
   );
 }
